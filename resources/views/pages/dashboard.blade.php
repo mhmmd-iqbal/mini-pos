@@ -98,7 +98,7 @@
                                 <h3 class="mb-3">Produk</h3>
                                 <div class="row">
                                     @foreach ($products as $product)
-                                        <div class="col-lg-3 col-sm-12 col-xl-3 dialog-box">
+                                        <div class="col-lg-3 col-sm-12 col-xl-3 dialog-box m-2">
                                             <div class="row over" style="height: 200px;">
                                                 <div class="col-12">
                                                     <img src="{{asset('upload/products/'.$product->image)}}" alt="Preview image" style="max-height: 300px" >
@@ -115,7 +115,7 @@
                                                     {{number_format($product->price, 0, "", ".")}}
                                                 </h4>
                                             </div>
-                                            <div class="row" style="height: 200px; overflow:scroll;">
+                                            <div class="row" style="height: 180px; overflow:scroll;">
                                                 <div class="description m-2" style="text-align: justify; font-size: 11px;">
                                                    {!!$product->description!!}
                                                 </div>
