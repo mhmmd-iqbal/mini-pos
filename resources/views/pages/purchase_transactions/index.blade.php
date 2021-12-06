@@ -134,34 +134,34 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-4 form-group">
+                                    <div class="col-lg-4 form-group">
                                         <label for="">Suplier</label>
                                         <select name="" class="form-control" id="suplier-select2"></select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4 form-group">
+                                    <div class="col-lg-4 form-group">
                                         <label for="">Produk</label>
                                         <select name="" class="form-control" onchange="getProduct(this)" id="product-select2"></select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-2 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="">Jumlah Unit Tersisa</label>
                                         <input type="text" value="0" disabled id="unit-last" class="form-control">
                                     </div>
-                                    <div class="col-4 form-group">
+                                    <div class="col-lg-4 form-group">
                                         <label for="">Harga Produk</label>
                                         <input type="text" disabled id="price-default" class="form-control">
                                     </div>
                                
-                                    <div class="col-2 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="">Unit Yang Masuk</label>
                                         <input type="number" id="unit" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-8">
+                                    <div class="col-lg-8">
                                         <button class="btn btn-block btn-success" onclick="addData()">
                                             Simpan
                                         </button>

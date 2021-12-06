@@ -24,45 +24,60 @@
                     <a href="{{route('dashboard')}} ">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
+                @can('isAdmin')
                 <li class="has-sub {{ (request()->is('master*')) ? 'active' : '' }}">
                     <a class="js-arrow" href="#">
                         <i class="fas  fa-th-large"></i>Master Data</a>
-                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                        {{-- <li>
-                            <a href="">Data Hak Akses</a>
-                        </li> --}}
-                        <li>
-                            <a href="">Data User</a>
+                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list" style="display:{{ (request()->is('master*')) ? 'block' : 'none' }}">
+                        <li class="{{ (request()->is('master/user*')) ? 'active' : '' }}">
+                            <a href="{{route('user.index')}}">Data User</a>
                         </li>
-                        <li>
-                            <a href="">Data Kategori Produk</a>
+                        <li class="{{ (request()->is('master/category*')) ? 'active' : '' }}">
+                            <a href="{{route('category.index')}}">Data Kategori Produk</a>
                         </li>
-                        <li>
-                            <a href="">Data Produk</a>
+                        <li class="{{ (request()->is('master/product*')) ? 'active' : '' }}">
+                            <a href="{{route('product.index')}} ">Data Produk</a>
                         </li>
-                        <li>
-                            <a href="">Data Suplier</a>
+                        <li class="{{ (request()->is('master/suplier*')) ? 'active' : '' }}">
+                            <a href="{{route('suplier.index')}} ">Data Suplier</a>
                         </li>
-                        <li>
-                            <a href="">Data Pelanggan</a>
+                        <li class="{{ (request()->is('master/customer*')) ? 'active' : '' }}">
+                            <a href="{{route('customer.index')}} ">Data Pelanggan</a>
                         </li>
                         
                     </ul>
                 </li>
+                @endcan
+                @canany(['isAdmin', 'isCasheer'])
+                <li class="{{ (request()->is('about')) ? 'active' : '' }}">
+                    <a href="" class="disabled">
+                        <i class="fas fa-toggle-up"></i>Transaksi Penjualan</a>
+                </li>
+                <li class="{{ (request()->is('purchase/transaction*')) ? 'active' : '' }}">
+                    <a href="{{route('purchase.transaction')}}">
+                        <i class="fas fa-toggle-down"></i>Transaksi Pembelian</a>
+                </li>
+                @endcanany
+                @can('isAdmin')
                 <li class="has-sub {{ (request()->is('report*')) ? 'active' : '' }}">
                     <a class="js-arrow" href="#">
-                        <i class="fas  fa-list"></i>Master Data</a>
+                        <i class="fas  fa-list"></i>Laporan Transaksi</a>
                     <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                         {{-- <li>
                             <a href="">Data Hak Akses</a>
                         </li> --}}
                         <li>
-                            <a href="">Laporan Pembelian</a>
+                            <a class="disabled" href="">Laporan Pembelian</a>
                         </li>
                         <li>
-                            <a href="">Laporan Penjualan</a>
+                            <a class="disabled" href="">Laporan Penjualan</a>
                         </li>                        
                     </ul>
+                </li>
+                @endcan
+                <li class="{{ (request()->is('about')) ? 'active' : '' }}">
+                    <a href="#" onclick="logout()">
+                        <i class="fas fa-power-off"></i>Log Out</a>
                 </li>
             </ul>
         </div>
@@ -112,7 +127,7 @@
                 @endcan
                 @canany(['isAdmin', 'isCasheer'])
                 <li class="{{ (request()->is('about')) ? 'active' : '' }}">
-                    <a href="">
+                    <a href="" class="disabled">
                         <i class="fas fa-toggle-up"></i>Transaksi Penjualan</a>
                 </li>
                 <li class="{{ (request()->is('purchase/transaction*')) ? 'active' : '' }}">
@@ -129,10 +144,10 @@
                             <a href="">Data Hak Akses</a>
                         </li> --}}
                         <li>
-                            <a href="">Laporan Pembelian</a>
+                            <a class="disabled" href="">Laporan Pembelian</a>
                         </li>
                         <li>
-                            <a href="">Laporan Penjualan</a>
+                            <a class="disabled" href="">Laporan Penjualan</a>
                         </li>                        
                     </ul>
                 </li>

@@ -74,6 +74,11 @@
         .card-header h4{
             color: white
         }
+
+        a.disabled {
+            pointer-events: none;
+            cursor: default;
+        }
     </style>
     @yield('custom_styles')
 </head>

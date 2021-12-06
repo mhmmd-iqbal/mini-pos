@@ -85,7 +85,7 @@
                                             Approve
                                         </button>
                                     @endif
-                                    <button class="btn mx-2 btn-danger" onclick="invoice()">
+                                    <button class="btn mx-2 btn-danger disabled" onclick="invoice()">
                                         Cetak Invoice
                                     </button>
                                 </div>

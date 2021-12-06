@@ -34,7 +34,6 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('isHasAccess', function($user){
             return $user->role->name == 'admin' || $user->role->name == 'casheer';
-
         });
     }
 }

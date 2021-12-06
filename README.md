@@ -9,3 +9,5 @@
 # username: admin
 
 # password: admin
+
+# please turn on your internet connection. some CDN require internet connection
