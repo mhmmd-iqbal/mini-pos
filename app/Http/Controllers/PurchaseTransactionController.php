@@ -103,13 +103,12 @@ class PurchaseTransactionController extends Controller
                 $purchase->update([
                     'status'    => 'success'
                 ]);
-
                 foreach ($purchase->products as $product ) {
-                    $product->update(
-                        [
-                            'unit'  => (int) $product->unit + $product->quantity
-                        ]
-                    );
+                    
+                    Product::where('id', $product->id)
+                    ->update([
+                        'unit'  => (int) $product->unit + $product->quantity
+                    ]);
                 }
 
                 DB::commit();

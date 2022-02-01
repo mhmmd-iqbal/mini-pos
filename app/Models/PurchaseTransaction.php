@@ -31,6 +31,6 @@ class PurchaseTransaction extends Model
             'id',
             'id', 
             'product_id', 
-        )->select(['name', 'unit', 'price', 'quantity']);
+        )->select(['name', 'unit', 'price', 'quantity', 'products.id']);
     }
 }
